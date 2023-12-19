@@ -61,7 +61,7 @@ public class MathUtilsSin extends ApplicationAdapter {
 
     @Override
     public void render() {
-        Gdx.graphics.setTitle(Gdx.graphics.getFramesPerSecond() + " FPS");
+        Gdx.graphics.setTitle("MathUtils.sin() at " + Gdx.graphics.getFramesPerSecond() + " FPS");
         ScreenUtils.clear(0f, 0f, 0f, 1f);
         putMap();
     }

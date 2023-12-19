@@ -16,7 +16,7 @@ import static com.badlogic.gdx.Input.Keys.ESCAPE;
 import static com.badlogic.gdx.graphics.GL20.GL_POINTS;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
-public class TrigToolsSinSmooth extends ApplicationAdapter {
+public class TrigToolsCos extends ApplicationAdapter {
     private ImmediateModeRenderer20 renderer;
 
     public static final int width = 1920, height = 1080;
@@ -24,7 +24,7 @@ public class TrigToolsSinSmooth extends ApplicationAdapter {
     private Viewport view;
     private long startTime;
 
-    public TrigToolsSinSmooth() {
+    public TrigToolsCos() {
     }
 
     @Override
@@ -52,7 +52,7 @@ public class TrigToolsSinSmooth extends ApplicationAdapter {
         for (int x = 0; x < width; x++) {
             float c = x - ctr;
             for (int y = 0; y < height; y++, c += 0x1p-9f) {
-                renderer.color(BitConversion.intBitsToFloat((BitConversion.floatToIntBits(TrigTools.sinSmooth(c)) & 0x00FFFFFF) | 0xFE000000));
+                renderer.color(BitConversion.intBitsToFloat((BitConversion.floatToIntBits(TrigTools.cos(c)) & 0x00FFFFFF) | 0xFE000000));
                 renderer.vertex(x, y, 0);
             }
         }
@@ -61,7 +61,7 @@ public class TrigToolsSinSmooth extends ApplicationAdapter {
 
     @Override
     public void render() {
-        Gdx.graphics.setTitle("TrigTools.sinSmooth() at " + Gdx.graphics.getFramesPerSecond() + " FPS");
+        Gdx.graphics.setTitle("TrigTools.cos() at " + Gdx.graphics.getFramesPerSecond() + " FPS");
         ScreenUtils.clear(0f, 0f, 0f, 1f);
         putMap();
     }

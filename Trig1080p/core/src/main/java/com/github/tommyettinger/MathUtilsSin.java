@@ -56,6 +56,16 @@ public class MathUtilsSin extends ApplicationAdapter {
                 renderer.vertex(x, y, 0);
             }
         }
+//        float ctr = TimeUtils.timeSinceMillis(startTime) * 0x1p-4f;
+//        for (int x = 0; x < width; x++) {
+//            float c = x * 1.5f;
+//            for (int y = 0; y < height; y++, c += 0x1p-6f) {
+//                int bright = (int)((MathUtils.sin(c * y) * MathUtils.sin((y * (1.57f + c))) * MathUtils.sin(ctr * (c - y))) * 127.999f + 128f);
+//                renderer.color(BitConversion.intBitsToFloat(bright * 0x00010101 | 0xFE000000));
+//                renderer.vertex(x, y, 0);
+//            }
+//        }
+
         renderer.end();
     }
 
